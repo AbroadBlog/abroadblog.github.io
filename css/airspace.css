@@ -3,7 +3,7 @@
  * In airspace, it is called style.css
  * However, style.css now holds additional styles for this jekyll port. (Not written by ThemeFisher)
  * The original style.css is now called airspace.css
- * 
+ *
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
@@ -113,7 +113,7 @@ font header .navbar-default .navbar-nav li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, #8b86a3, #322e40);
+  background: linear-gradient(to left, #999, #777);
   opacity: 0.8;
 }
 #slider .block {
@@ -374,13 +374,12 @@ font header .navbar-default .navbar-nav li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, #928dab, #1f1c2c 70%);
+  background: linear-gradient(to left, #999, #777 70%);
   opacity: 0.8;
 }
 #global-header .block {
   color: #E3E3E4;
   margin: 0 auto;
-  padding-left: 90px;
   text-align: center;
 }
 #global-header .block h1 {
@@ -622,7 +621,7 @@ font header .navbar-default .navbar-nav li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, #928dab, #1f1c2c 70%);
+  background: linear-gradient(to left, #999, #777 70%);
   opacity: 0.8;
 }
 #slider-contact .block {
@@ -649,40 +648,8 @@ font header .navbar-default .navbar-nav li a:hover {
 /*--
 	contact-form Start
 --*/
-#contact-form {
-  padding-top: 70px;
-  padding-bottom: 35px;
-}
-#contact-form .block form .form-group {
-  padding-bottom: 15px;
-  margin: 0px;
-}
-#contact-form .block form .form-group .form-control {
-  background: #F6F8FA;
-  height: 60px;
-  border: 1px solid #EEF2F6;
-  box-shadow: none;
-  width: 100%;
-}
-#contact-form .block form .form-group-2 {
-  padding-bottom: 15px;
-  margin: 0px;
-}
-#contact-form .block form .form-group-2 textarea {
-  background: #F6F8FA;
-  height: 135px;
-  border: 1px solid #EEF2F6;
-  box-shadow: none;
-  width: 100%;
-}
-#contact-form .block button {
-  width: 100%;
-  height: 60px;
-  background: #47424C;
-  border: none;
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+#social-media {
+  padding: 100px 0;
 }
 /*--
 	wrapper-contact Start
@@ -706,9 +673,12 @@ font header .navbar-default .navbar-nav li a:hover {
   display: inline-block;
 }
 .social-icons i {
-  color: #2C2C2C;
+  transition: color 0.2s;
   margin-right: 25px;
   font-size: 25px;
+}
+.social-icons i:hover {
+  color: #ddd;
 }
 .google-map {
   position: relative;
@@ -777,7 +747,7 @@ footer {
   background: #F5F5F5;
   text-align: center;
   padding-top: 48px;
-  padding-bottom: 55px;
+  padding-bottom: 48px;
 }
 footer p {
   font-size: 13px;
