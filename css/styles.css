@@ -271,6 +271,71 @@ path.travel.travel-israel {
   width: 50%;
 }
 
+.post-icon {
+  color: #ccc;
+}
+
+.post-icon:hover {
+  color: #bbb;
+}
+
+.post .header {
+  padding: 1em;
+  background-color: #FDFCEC;
+}
+
+.post .top {
+  text-align: center;
+  background-color: #FDFCEC;
+  border-bottom: 1px solid #ccc;
+}
+
+.post .header h1 {
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+.post .details p {
+  padding: 0.5em;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+.post .content {
+  padding: 3em 2em;
+}
+
+.navigate {
+  text-align: center;
+  background-color: #FDFCEC;
+  padding: 1em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.navigate .btn {
+  padding: 0.3em 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  background-color: #fff;
+  color: #aaa;
+}
+
+.navigate .btn:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+.navigate .btn.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.navigate .btn.disabled:hover {
+  background-color: #fff;
+  color: #aaa;
+}
+
 @media (max-width: 992px) {
   .fuzz-out {
     width: 100%;
