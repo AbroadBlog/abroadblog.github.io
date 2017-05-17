@@ -38,7 +38,7 @@
     <!-- // END CSS -->
 
     <div class="overlay" onClick="style.pointerEvents='none'"></div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487535.2040779637!2d32.83823470820465!3d31.392185357055627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1500492432a7c98b%3A0x6a6b422013352cba!2sIsrael!5e0!3m2!1sen!2sus!4v1493196686084" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.879703956451!2d35.50143407699796!3d31.76127443591004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502d7d634c1fc4b%3A0xd96f623e456ee1cb!2sJerusalem%2C+Israel!5e0!3m2!1sen!2sus!4v1493566552115" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
     <div class="details">
       <p>April 15, 2017</p>
     </div>
@@ -111,11 +111,15 @@
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 
 <script>
   var map = document.getElementsByTagName("svg")[0];
 
   $(document).ready(function() {
+
+    fullscreen();
+
     var x = document.getElementsByClassName("travel");
     var i;
     for (i = 0; i < x.length; i++) {
@@ -142,9 +146,36 @@
 
   $(window).on('load', function() {
     fullscreen();
+    // get hash value
+    var hash = window.location.hash;
+    // now scroll to element with that id
+    $('html, body').animate({ scrollTop: $(hash).offset().top });
   });
 
   $(window).scroll(function() {
+    // MANUAL ADDITIONs
+    draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
+    // END MANUAL ADDITIONS
+    
+      
+        draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
+      
+      
+        draw_section("#BER-BRE-1", ".BERLIN-TO-BREMEN", 200);
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-GEN-1", ".BREMEN-TO-SWITZERLAND", 200);
+      
+      
+        draw_section("#GEN-BRE-1", ".SWITZERLAND-TO-BREMEN", 200);
+      
+    
+      
+      
     
       
         draw_section("#BRE-AMS-2", ".BREMEN-TO-AMSTERDAM-AGAIN", 200);
@@ -356,6 +387,7 @@
     var bottom = pos["bottom"];
     var scrollTop = document.body.scrollTop;
     var path_length = path.getTotalLength();
+    var fade_in_lines_top = getPos(document.querySelector(".fade-in-lines"))["top"];
     // Don't calc if out of range
     if (scrollTop < top) {
       var offset_val = path_length;
@@ -369,7 +401,17 @@
     }
     path.style["stroke-dashoffset"] = offset_val;
 
-    if ( scrollTop > bottom + 100 ) {
+    if ( scrollTop > fade_in_lines_top ) {
+      var fade_in_lines_bottom = getPos(document.querySelector(".fade-in-lines"))["bottom"];
+      var mid = (fade_in_lines_bottom - fade_in_lines_top) + fade_in_lines_top;
+      if ( scrollTop > mid ) {
+        path.style.opacity = 1;
+      }
+      else {
+        path.style.opacity = 0.05 + ( (scrollTop - fade_in_lines_top) / (fade_in_lines_bottom - fade_in_lines_top) );
+      }
+    }
+    else if ( scrollTop > bottom + 100 ) {
       var perc_past = 1 - ((scrollTop - bottom) / disap_speed);
       if ( perc_past < 0.05 ) {
         perc_past = 0.05;
@@ -389,6 +431,17 @@
       bottom: ly + height
     };
   }
+
+  var clipboard = new Clipboard('.copy-link-btn');
+
+  clipboard.on('success', function(e) {
+    $(".copied").fadeIn("slow").delay(800).fadeOut("slow");
+  });
+
+  clipboard.on('error', function(e) {
+    $(".error-copying").fadeIn("slow").delay(800).fadeOut("slow");
+  });
+
 
 </script>
 

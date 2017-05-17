@@ -60,6 +60,8 @@
 
 <p>Millenials get a lot of shit. We’re the “soft” generation. We’re the slaves to technology. We are constantly blamed for the world’s problems by boomers, and we don’t really do anything right… but this criticism I agree with. We need to stop living behind screens, stop living to impress each other, and we need to just live. The world is more globalized than it has ever been before and we (especially Americans) have been met with incomparable opportunities. This is my attempt at that. I’m enjoying the moment, remembering it, and reporting back.</p>
 
+<p>The inspiration for this blog was derived from <a href="https://tympanus.net/Development/StorytellingMap/">this</a>. I took a lot from this concept and figured I’d give credit where credit is due. The execution in terms of code is rather different, and I personally don’t think my design is as great, but I tried and am actually pretty happy with the result.</p>
+
 <p>Enjoy.</p>
 
   </div>
@@ -81,11 +83,15 @@
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
 
 <script>
   var map = document.getElementsByTagName("svg")[0];
 
   $(document).ready(function() {
+
+    fullscreen();
+
     var x = document.getElementsByClassName("travel");
     var i;
     for (i = 0; i < x.length; i++) {
@@ -112,9 +118,36 @@
 
   $(window).on('load', function() {
     fullscreen();
+    // get hash value
+    var hash = window.location.hash;
+    // now scroll to element with that id
+    $('html, body').animate({ scrollTop: $(hash).offset().top });
   });
 
   $(window).scroll(function() {
+    // MANUAL ADDITIONs
+    draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
+    // END MANUAL ADDITIONS
+    
+      
+        draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
+      
+      
+        draw_section("#BER-BRE-1", ".BERLIN-TO-BREMEN", 200);
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-GEN-1", ".BREMEN-TO-SWITZERLAND", 200);
+      
+      
+        draw_section("#GEN-BRE-1", ".SWITZERLAND-TO-BREMEN", 200);
+      
+    
+      
+      
     
       
         draw_section("#BRE-AMS-2", ".BREMEN-TO-AMSTERDAM-AGAIN", 200);
@@ -326,6 +359,7 @@
     var bottom = pos["bottom"];
     var scrollTop = document.body.scrollTop;
     var path_length = path.getTotalLength();
+    var fade_in_lines_top = getPos(document.querySelector(".fade-in-lines"))["top"];
     // Don't calc if out of range
     if (scrollTop < top) {
       var offset_val = path_length;
@@ -339,7 +373,17 @@
     }
     path.style["stroke-dashoffset"] = offset_val;
 
-    if ( scrollTop > bottom + 100 ) {
+    if ( scrollTop > fade_in_lines_top ) {
+      var fade_in_lines_bottom = getPos(document.querySelector(".fade-in-lines"))["bottom"];
+      var mid = (fade_in_lines_bottom - fade_in_lines_top) + fade_in_lines_top;
+      if ( scrollTop > mid ) {
+        path.style.opacity = 1;
+      }
+      else {
+        path.style.opacity = 0.05 + ( (scrollTop - fade_in_lines_top) / (fade_in_lines_bottom - fade_in_lines_top) );
+      }
+    }
+    else if ( scrollTop > bottom + 100 ) {
       var perc_past = 1 - ((scrollTop - bottom) / disap_speed);
       if ( perc_past < 0.05 ) {
         perc_past = 0.05;
@@ -359,6 +403,17 @@
       bottom: ly + height
     };
   }
+
+  var clipboard = new Clipboard('.copy-link-btn');
+
+  clipboard.on('success', function(e) {
+    $(".copied").fadeIn("slow").delay(800).fadeOut("slow");
+  });
+
+  clipboard.on('error', function(e) {
+    $(".error-copying").fadeIn("slow").delay(800).fadeOut("slow");
+  });
+
 
 </script>
 
