@@ -379,25 +379,25 @@ path.travel.travel-israel {
   border-bottom: 1px solid #ccc;
 }
 
-.navigate .btn {
-  padding: 0.3em 0.7em;
+.btn {
+  padding: 0.5em 0.7em;
   border: 1px solid #ccc;
-  border-radius: 20%;
+  border-radius: 0.25em;
   background-color: #fff;
   color: #aaa;
 }
 
-.navigate .btn:hover {
+.btn:hover {
   background-color: #aaa;
   color: #fff;
 }
 
-.navigate .btn.disabled {
+.btn.disabled {
   opacity: 0.2;
   cursor: not-allowed;
 }
 
-.navigate .btn.disabled:hover {
+.btn.disabled:hover {
   background-color: #fff;
   color: #aaa;
 }
