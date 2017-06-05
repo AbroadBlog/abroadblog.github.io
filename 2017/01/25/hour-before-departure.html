@@ -44,13 +44,18 @@
     </div>
   </div>
   <div class="content">
-    <p>Yes… I’m still in Canton… for about another hour as I write this! But then I will be off. <em>All my bags are packed, I’m ready to go. I’m standing here outside your door. I hate to wake you up to say goodbye.</em> Heh, John Denver &lt;3.</p>
+    <p>Yes... I'm still in Canton... for about another hour as I write this! But then I will be off.</p>
 
-<p>I don’t really have much of a playlist created for these flights. I honestly don’t have anything prepared… that’s about how I do for travel. I was so excited when I finally got to CAK. I checked my luggage and it weighed 51lbs (how ridiculous is that… 4 months abroad and I can only take one bag of 50lbs?!) and they still let me go. Apparently it’s policy to allow up to 52lbs. Nice.</p>
+<!-- <figure>
+  <img src="https://c1.staticflickr.com/5/4272/34831219256_561a29811f_h.jpg" alt="Macaque in the trees">
+  <figcaption>A cheeky macaque, Lower Kintaganban River, Borneo. Original by <a href="http://bobbylcraig.com">Richard Clark</a></figcaption>
+</figure> -->
 
-<p>To satiate my appetite, I made my way to the first food booth in CAK—the Cinnabon—and got a Cinnabon Classic because I’m boring and vanilla like that (and am trying to induce my inevitable diabetes). I ate that, made an <a href="https://www.instagram.com/p/BPsMfBlBtgZCFh9FzVEwsI0YTGpiJ_RMauV9xo0/">Instagram post</a>, and headed for Gate 5. I’m writing this as I wait for boarding to begin.</p>
+<p>I don't really have much of a playlist created for these flights. I honestly don't have anything prepared... that's about how I do for travel. I was so excited when I finally got to CAK. I checked my luggage and it weighed 51lbs (how ridiculous is that... 4 months abroad and I can only take one bag of 50lbs?!) and they still let me go. Apparently it's policy to allow up to 52lbs. Nice.</p>
 
-<p>I’m ready for my trip. I slept very little so I’m hoping that my early morning arrival won’t be too terrible if I can fall asleep on the plane (it’ll be 4am EST). If not, day 1 in Bremen will be miserable. I may update this or add posts at other airports depending on how bored I am. I’m headed to Atlanta next and then Paris. Tschüss!</p>
+<p>To satiate my appetite, I made my way to the first food booth in CAK&mdash;the Cinnabon&mdash;and got a Cinnabon Classic because I'm boring and vanilla like that (and am trying to induce my inevitable diabetes). I ate that and headed for Gate 5. I'm writing this as I wait for boarding to begin.</p>
+
+<p>I'm ready for my trip. I slept very little, so I'm hoping that my early morning arrival won't be too terrible if I can fall asleep on the plane (it'll be 4am EST). If not, day 1 in Bremen will be miserable. I may update this or add posts at other airports depending on how bored I am. I'm headed to Atlanta next and then Paris. Tschüss!</p>
 
   </div>
 </div>
@@ -100,6 +105,11 @@
 
   $(document).ready(function() {
 
+    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
+      $(".slide-out-nav").toggleClass("open");
+      $(".slide-activator").toggleClass("open");
+    });
+
     fullscreen();
 
     var x = document.getElementsByClassName("travel");
@@ -131,13 +141,43 @@
     // get hash value
     var hash = window.location.hash;
     // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top });
+    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
   });
 
-  $(window).scroll(function() {
+  function draw_lines() {
     // MANUAL ADDITIONs
     draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
     // END MANUAL ADDITIONS
+    
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
+      
+      
+        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
         draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
@@ -331,6 +371,10 @@
       
       
     
+  }
+
+  $(window).scroll(function() {
+    draw_lines();
   });
 
   function fullscreen(){

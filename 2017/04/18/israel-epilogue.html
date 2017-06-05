@@ -46,6 +46,8 @@
   <div class="content">
     <p>If you're looking at this now, it's not been updated yet. I'm still reflecting, okay!?!?!? Get off my case!</p>
 
+<p>[Edit: yeah, I'm not going to update this. I feel like the "reflection" would become rather political and I don't want to really hop into that on this log...that ain't the point.]</p>
+
   </div>
 </div>
 <div class="navigate">
@@ -71,6 +73,11 @@
   var map = document.getElementsByTagName("svg")[0];
 
   $(document).ready(function() {
+
+    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
+      $(".slide-out-nav").toggleClass("open");
+      $(".slide-activator").toggleClass("open");
+    });
 
     fullscreen();
 
@@ -103,13 +110,43 @@
     // get hash value
     var hash = window.location.hash;
     // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top });
+    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
   });
 
-  $(window).scroll(function() {
+  function draw_lines() {
     // MANUAL ADDITIONs
     draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
     // END MANUAL ADDITIONS
+    
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
+      
+      
+        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
         draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
@@ -303,6 +340,10 @@
       
       
     
+  }
+
+  $(window).scroll(function() {
+    draw_lines();
   });
 
   function fullscreen(){

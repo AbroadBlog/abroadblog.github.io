@@ -68,7 +68,7 @@
 
 <p>Eventually, after spotting some horses on the trail, we head to where they exited an make our way up the hill. We make a few wrong turns along the way and Brooke has to yell at me for hiking a bit too fast (I have long legs, what can I say?) but we're on our way up! We run into some guys trail running who warn us of "lynxes", and we all have a good chuckle at their silliness. At this point, it's getting kind of late. Sun sets around 8:30 and we decide to stop and set up camp around 7:45ish to ensure that we don't get caught in the dark. What we forget to take into account is the fact that just because the sun sets doesn't mean it gets dark immediately. It doesn't <strong>actually</strong> get dark until around 9:45 and we're just kind of chilling and talking until then. We set up our tent and try out some of the energy bars that we brought along. They honestly weren't terrible, which I found kind of surprising. We take off our shoes, stick them in a plastic bag to avoid dew making them super wet over night, and we all slip into our sleeping bags.</p>
 
-<p>Brooke falls asleep pretty early&mdash;she seems extremely exhausted and kind of passes out almost immediately after getting in her sleeping bag. Jack and I, however, decide we're going to look at the moon and talk about random stuff. For a while I swear we only talk in movie quotes––it's hauntingly beautiful. At one point we're getting a bit rowdy and actually wake up Brooke which causes her to call us stupid for watching too much Spongebob. Eventually it gets darker and darker and Jack and I decide it's a good idea to save some energy for the following day, so we crawl into our sleeping bags and try to catch some sleep.</p>
+<p>Brooke falls asleep pretty early&mdash;she seems extremely exhausted and kind of passes out almost immediately after getting in her sleeping bag. Jack and I, however, decide we're going to look at the moon and talk about random stuff. For a while I swear we only talk in movie (especially <a href="http://reddit.com/r/PrequelMemes">prequel</a>) quotes––it's hauntingly beautiful. At one point we're getting a bit rowdy and actually wake up Brooke which causes her to call us stupid for watching too much Spongebob. Eventually it gets darker and darker and Jack and I decide it's a good idea to save some energy for the following day, so we crawl into our sleeping bags and try to catch some sleep.</p>
 
 <p>Though I'm disturbed all night by a rock under the tent digging into my back, I manage to get decent sleep and wake up with energy in the morning. I think the energy might just be coming from excitement, but it's surely there. In the morning I'm hopping around and am packed up before Jack and Brooke are seemingly even out of the tent. I wait for them to get prepped and walk around to keep warm...there's fog everywhere around us and it's difficult to see even just 100 meters out. Eventually the tent is empty and I fold it up, so we're on our way. Not too long after, Brooke realizes that she's missing her glasses and THEY'RE STILL IN THE TENT. Well, thankfully I didn't do a very good job of folding the tent up, so the glasses aren't broken. Despite this mishap, we continue on.</p>
 
@@ -76,7 +76,7 @@
 
 <p>It's here that we begin the true workout. It's also here that we realize how difficult hiking will be for Jack in the future...his shoes had <strong>absolutely</strong> no tread. On the first bit up the mountain he continually slipped, foreshadowing future incidents of slipping all over the trail when snow or mud are around. Well, hiking up the peak (about 200m of elevation) took us about a half hour. Of course, this was with breaks to take in the ridiculous view from the top. We could actually see over into France from the top of the mountain and there were pretty cool rock walls lining the mountain...still not sure what the purpose of them was, but they were all over the trail we would later find out.</p>
 
-<p>The top of the mountain was absolutely beautiful. You could see miles and miles of beautiful farm land and mountains and there were people just sitting at the top with their dogs enjoying the view. We had climbed 1670m (La Dôle) to get here and it was so worth it. However, we had ground to cover and couldn't waste time standing around. So, we moved along.</p>
+<p>The top of the mountain was absolutely beautiful. You could see miles and miles of beautiful farm land and mountains and there were people just sitting at the top with their dogs enjoying the view. We had climbed 1670m (<a href="https://www.google.com/maps/place/La+D%C3%B4le,+1276+Gingins,+Switzerland/data=!4m2!3m1!1s0x478c5ed6106e70bb:0x205dce204295cb56!5m1!1e4?sa=X&amp;ved=0ahUKEwiw-o2U5_bTAhUE1mMKHQF8DaAQ8gEIgQEwCw">La Dôle</a>) to get here and it was so worth it. However, we had ground to cover and couldn't waste time standing around. So, we moved along.</p>
 
 <p>The next part of the hike is absolutely infuriating. We climbed part of the way down the mountain and then did a cross back and went down a rather steep part of the path...it was much steeper going down than the trail going up was. As we were approaching the base of the peak, we realized that we had <strong>gone the wrong way</strong>. Oh, I was mad. So mad. But there was nothing we could do, so we made our way BACK UP the freaking steep side of the hill in order to turn around and go the correct way. We make it back to the top, turn about 30 degrees from the direction we first took, and headed down THAT path. Luckily, this path was correct. This was our first time going the wrong way and having to retrace our path.</p>
 
@@ -120,7 +120,7 @@
 
 </div>
 
-<p>This trip was really great. I learned a lot, got out into nature, got closer to Jack and Brooke, learned a lot about myself, and I think it solidified my desire to climb Mt. Denison in the near future. Of course, Mt. Denison is far more technical than anything in the Jura mountains, but I wouldn't mind making a habit out of mountain climbing. Cheers to this trip! And a big "screw you" to Switzerland for your unreasonable prices and inviting atmosphere!</p>
+<p>This trip was really great. I learned a lot, got out into nature, got closer to Jack and Brooke, learned a lot about myself, and I think it solidified my desire to climb Mt. Denison in the near future. Of course, Mt. Denison is far more technical than anything in the Jura mountains, but I wouldn't mind making a habit out of mountain climbing. Cheers to this trip! And a big "screw you" to Switzerland for your mix of unreasonable prices and inviting atmosphere!</p>
 
   </div>
 </div>
@@ -170,6 +170,11 @@
 
   $(document).ready(function() {
 
+    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
+      $(".slide-out-nav").toggleClass("open");
+      $(".slide-activator").toggleClass("open");
+    });
+
     fullscreen();
 
     var x = document.getElementsByClassName("travel");
@@ -201,13 +206,43 @@
     // get hash value
     var hash = window.location.hash;
     // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top });
+    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
   });
 
-  $(window).scroll(function() {
+  function draw_lines() {
     // MANUAL ADDITIONs
     draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
     // END MANUAL ADDITIONS
+    
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
+      
+      
+        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
         draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
@@ -401,6 +436,10 @@
       
       
     
+  }
+
+  $(window).scroll(function() {
+    draw_lines();
   });
 
   function fullscreen(){

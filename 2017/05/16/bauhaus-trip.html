@@ -48,7 +48,7 @@
 
 <p>Our trip for the Bauhaus seemed simultaneously extremely long and rather short. It's hard to explain. Perhaps it's because I slept a lot on the trip, but perhaps not. We were traveling to the Bauhaus for an art history class. If you don't know what the Bauhaus is, I highly recommend you look it up...it's actually decently interesting and was really influential.</p>
 
-<p>Anyway, our travel was all covered for us...Izzy (our professor...actual name Isabel, we called her Izzy behind her back because she is swag personified) planned it all. We left around 7am and were all groggy, especially since dining halls aren't open that early and we couldn't eat until later when we had a longer layover. We hopped the train to Bremen Hbf and then we left for our first leg: Hannover. The trip went quickly and we arrived with a half hour layover. Hannover was very lively&mdash;there were concerts going on and the sun was out...it was beautiful. We went to a coffee place because Gabi wanted coffee and then Lillian and I decided to also get drinks. They were nice for the trip...from here, we were on to our next leg. To Göttingen!</p>
+<p>Anyway, our travel was all covered for us...Izzy (our professor...actual name Isabel, we called her Izzy behind her back because she is swag personified) planned it all. We left around 7am and were all groggy, especially since dining halls aren't open that early and we couldn't eat until later when we had a longer layover. We hopped the train to Bremen Hbf and then we left for our first leg: Hannover. The trip went quickly and we arrived with a half hour layover. Hannover was very lively&mdash;there were concerts going on and the sun was out...it was beautiful. We went to a coffee place because Gabi wanted coffee and then Lillian and I decided to also get drinks (at Balzac Coffee!). They were nice for the trip...from here, we were on to our next leg. To Göttingen!</p>
 
 <p>Finally, after a two hour train ride we arrived in Weimar. I wasn't expecting to like Weimar as much as I did, but I think it was actually one of my favorite, if not my favorite, Germany city. It had charm, was quaint, and it had so much preserved culture and history. We stopped by the hostel that we'd be staying at and dropped off our belongings before heading out to do the <em>important</em> things we were set out to do. Led by Izzy, we made our way to the Bauhaus museum in Weimar and it was absolutely majestic.</p>
 
@@ -99,7 +99,7 @@
     
     <a class="btn btn-default" href="/"><i class="fa fa-th" aria-hidden="true"></i></a>
     
-    <a class="btn btn-default disabled" disabled><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    <a title="Finals..." class="btn btn-default" href="/2017/05/19/finals.html"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     
   </p>
 </div>
@@ -138,6 +138,11 @@
 
   $(document).ready(function() {
 
+    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
+      $(".slide-out-nav").toggleClass("open");
+      $(".slide-activator").toggleClass("open");
+    });
+
     fullscreen();
 
     var x = document.getElementsByClassName("travel");
@@ -169,13 +174,43 @@
     // get hash value
     var hash = window.location.hash;
     // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top });
+    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
   });
 
-  $(window).scroll(function() {
+  function draw_lines() {
     // MANUAL ADDITIONs
     draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
     // END MANUAL ADDITIONS
+    
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
+      
+      
+        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
         draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
@@ -369,6 +404,10 @@
       
       
     
+  }
+
+  $(window).scroll(function() {
+    draw_lines();
   });
 
   function fullscreen(){

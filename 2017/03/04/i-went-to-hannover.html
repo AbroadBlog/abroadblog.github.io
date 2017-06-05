@@ -51,7 +51,7 @@
 <div class="BREMEN-TO-HANNOVER" data-from="1725 1700 500 400" data-to="1675 1650 500 400">
 <p>I got to see a farmers market, the Hannover Rathaus, and I went through the mall. Dariya and Daniel were supposed to join me on the trip but they weren't able to wake up on time––after being held back from going to Hannover once already by them, I decided to go without.</p>
 
-<p>Other than that, look on social media for pictures. I'm starting to get tired of writing blog posts unfortunately...that's why this isn't very detailed.</p>
+<p>Other than that, look on social media for pictures. I'm starting to get tired of writing blog posts unfortunately...that's why this isn't very detailed. I shall try to persist!</p>
 </div>
 
   </div>
@@ -102,6 +102,11 @@
 
   $(document).ready(function() {
 
+    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
+      $(".slide-out-nav").toggleClass("open");
+      $(".slide-activator").toggleClass("open");
+    });
+
     fullscreen();
 
     var x = document.getElementsByClassName("travel");
@@ -133,13 +138,43 @@
     // get hash value
     var hash = window.location.hash;
     // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top });
+    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
   });
 
-  $(window).scroll(function() {
+  function draw_lines() {
     // MANUAL ADDITIONs
     draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
     // END MANUAL ADDITIONS
+    
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
+      
+      
+        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
         draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
@@ -333,6 +368,10 @@
       
       
     
+  }
+
+  $(window).scroll(function() {
+    draw_lines();
   });
 
   function fullscreen(){

@@ -46,9 +46,9 @@
   <div class="content">
     <p>German Politics and Culture went to Berlin a few weeks ago. Unfortunately, because it was prohibitively expensive, I didn’t go. I’ll be going at a later point in time. Because I didn’t get to go, I didn’t get to visit the Reichstag with the rest of the class which SUCKS. BUT THIS WEEK, we got to go to the Bremen Bürgerschaft (like a state house?). Equally as good? Not really. Still fun? Sure!</p>
 
-<p>Our class got a nifty tour of the place, we got to sit in the cocktail room and we sat in the chamber where all of the MP sit! It was pretty fun, I got a little nametag that said “Gast” on it, and we got to listen to Lillian give a speech about Bremen’s history and political climate.</p>
+<p>Our class got a nifty tour of the place, we got to sit in the cocktail room and we sat in the chamber where all of the MPs sit! It was pretty fun, I got a little nametag that said “Gast” on it, and we got to listen to Lillian give a speech about Bremen’s history and political climate.</p>
 
-<p>Afterward, I went with Dariya and a Scottish friend named Hannah to get a drink (specifically iced tea)…although Hannah got a beer with lemonade mixed in it and now I really want to try it! We sat there for quite a while, got ice cream, and then headed back to campus (where we saw Dr. Deutsch on the train)! It was a good afternoon, and I thought it was worth of a post here.</p>
+<p>Afterward, I went with Dariya and a Scottish friend named Hannah to get a drink (specifically iced tea)…although Hannah got a beer with lemonade mixed in it and now I really want to try it [Edit: it’s called a radler and I’ve beed advised against it]! We sat there for quite a while, got ice cream, and then headed back to campus (where we saw Dr. Deutsch on the train)! It was a good afternoon, and I thought it was worthy of a post here.</p>
 
   </div>
 </div>
@@ -98,6 +98,11 @@
 
   $(document).ready(function() {
 
+    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
+      $(".slide-out-nav").toggleClass("open");
+      $(".slide-activator").toggleClass("open");
+    });
+
     fullscreen();
 
     var x = document.getElementsByClassName("travel");
@@ -129,13 +134,43 @@
     // get hash value
     var hash = window.location.hash;
     // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top });
+    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
   });
 
-  $(window).scroll(function() {
+  function draw_lines() {
     // MANUAL ADDITIONs
     draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
     // END MANUAL ADDITIONS
+    
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
+      
+      
+    
+      
+      
+    
+      
+        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
+      
+      
+        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
     
       
         draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
@@ -329,6 +364,10 @@
       
       
     
+  }
+
+  $(window).scroll(function() {
+    draw_lines();
   });
 
   function fullscreen(){

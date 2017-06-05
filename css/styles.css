@@ -38,10 +38,30 @@ blockquote {
   font-style: italic;
 }
 
+figure img {
+  border: 10px solid #ddffdd;
+  max-width: 100%;
+  text-align: center;
+}
+
+figure figcaption {
+  font-style: italic;
+  font-size: 1em;
+  text-align: center;
+  padding: 1em 1.5em 0;
+  color: #888;
+}
+
 #main-map path {
   fill: #ddffdd;
   stroke: #aaa;
   stroke-width: 1px;
+}
+
+#main-map #large_masses_of_water {
+  z-index: 50;
+  fill: #aaffff;
+  stroke-width: 0px;
 }
 
 .quotation  blockquote {
@@ -318,6 +338,7 @@ path.travel.travel-israel {
 .post-icon {
   color: #ccc;
   padding: 0 1em;
+  cursor: pointer;
 }
 
 .post-icon:hover {
@@ -382,6 +403,7 @@ path.travel.travel-israel {
 }
 
 .msg {
+  z-index: 100;
   display: none;
   position: fixed;
   transform: translateX(-50%);
@@ -404,6 +426,68 @@ path.travel.travel-israel {
 
 .error-copying {
   background-color: rgba(100, 0, 0, 0.9);
+}
+
+.slide-out-nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  z-index: 1000;
+  background-color: #ddffdd;
+  width: 250px;
+  transition: 0.4s;
+  border-right: 5px solid white;
+  overflow-y: scroll;
+  padding: 1em 0;
+}
+
+.slide-out-nav.open {
+  left: 0;
+}
+
+.slide-activator {
+  position: fixed;
+  left: 15px;
+  top: 50%;
+  background-color: #ddffdd;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 1001;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+
+.slide-activator.open {
+  left: 265px;
+}
+
+.slide-activator:hover {
+  background-color: #31997d;
+}
+
+.slide-activator i {
+  transition: 0.8s;
+}
+
+.slide-activator.open i {
+  transform: rotate(180deg);
+}
+
+.slide-out-nav .posts a {
+  display: block;
+  width: inherit;
+  padding: 0.5em 1em;
+  color: black;
+}
+
+.slide-out-nav .posts a:hover {
+  background-color: #31997d;
 }
 
 @media (max-width: 992px) {
