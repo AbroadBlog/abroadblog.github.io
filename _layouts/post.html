@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div class="post">
+  <div class="top">
+    <div class="header">
+      <h1>{{ page.title }}</h1>
+    </div>
+    <!-- CSS -->
+    <style media="screen">
+      /* One Click To Have Pointer Events */
+      .overlay {
+        background:transparent;
+        position:relative;
+        width:100%;
+        height:300px;
+        top:300px;
+        margin-top:-300px;
+      }
+    </style>
+    <!-- // END CSS -->
+
+    <div class="overlay" onClick="style.pointerEvents='none'"></div>
+    <iframe src="{{ page.maps }}" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="details">
+      <p>{{ page.date | date: "%B %-d, %Y" }}</p>
+    </div>
+  </div>
+  <div class="content">
+    <a class="btn btn-default" href="/#{{ page.slug }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to main page</a>
+    {{ content }}
+  </div>
+</div>
+<div class="navigate">
+  <p>
+    {% if page.previous %}
+    <a title="{{ page.previous.title }}" class="btn btn-default" href="{{ page.previous.url }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    {% else %}
+    <a class="btn btn-default disabled" disabled><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    {% endif %}
+    <a title="Homepage" class="btn btn-default" href="/"><i class="fa fa-th" aria-hidden="true"></i></a>
+    {% if page.next %}
+    <a title="{{ page.next.title }}" class="btn btn-default" href="{{ page.next.url }}"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    {% else %}
+    <a class="btn btn-default disabled" disabled><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    {% endif %}
+  </p>
+</div>
+{% if page.comments %}
+<div id="comments" style="padding: 4em;">
+	<div id="disqus_thread"></div>
+	<script>
+	/**
+	*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+	// var disqus_config = function () {
+	// 	this.page.url = "http://bobbyabroad.github.io";  // Replace PAGE_URL with your page's canonical URL variable
+	// 	this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	// };
+
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+	s.src = 'https://im-ausland.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+{% endif %}
