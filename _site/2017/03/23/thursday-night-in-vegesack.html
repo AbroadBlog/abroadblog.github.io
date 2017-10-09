@@ -144,7 +144,7 @@
     });
   });
 
-  $(window).on('load', function() {
+  $(window).on('ready', function() {
     fullscreen();
     // get hash value
     var hash = window.location.hash;
@@ -419,7 +419,7 @@
     var pos = getPos(section);
     var top = pos["top"];
     var bottom = pos["bottom"];
-    var scrollTop = document.body.scrollTop;
+    var scrollTop = window.scrollY;
     var path_length = path.getTotalLength();
     var fade_in_lines_top = getPos(document.querySelector(".fade-in-lines"))["top"];
     // Don't calc if out of range
@@ -431,7 +431,6 @@
       var path_percent = ((scrollTop - top) / (bottom - top));
       var offset_val = path_length - (path_length * path_percent);
       box_change( section.getAttribute("data-from"), section.getAttribute("data-to"), path_percent );
-      console.log(path_length);
     }
     path.style["stroke-dashoffset"] = offset_val;
 
