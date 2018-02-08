@@ -49,7 +49,7 @@ The flight attendant called him back and urged him to make the announcement agai
 <p>Anyway, we land in New York safely (see pregnant lady, I wasn't lying!) and all file off of the plane in a rather slow fashion. Typical. We head to our next terminal for our future plane to Paris and they have all sorts of food laid out for us to try to appease us all. As 250 people descend upon this gate, people are trying to leave the jetway and it begins a major cluster of confusion. People (not people from our flight) are taking our free-Delta-food all over the place. Lol.</p>
 
 <figure>
-  <img src="/img/post-imgs/delay-gate-min.jpg">
+  <img src="/im-ausland/img/post-imgs/delay-gate-min.jpg">
   <figcaption>Here you can see the food (to the left) and the upset people (e'rywhere).</figcaption>
 </figure>
 
