@@ -26,6 +26,6 @@ data-box-from: "3675 3050 187 150"
 
 <p>Got off the flight, Munich was clean and easy to navigate, and their seats in their terminals didn't have armrests so sleeping wasn't terrible. I only got around 4 hours for the night, but it's better than what I got on the way there. Munich has gained a place in my heart as one of my favorite airports...maybe even my favorite. However, when I got up in the morning the food options were't great.</p>
 
-<p>Last flight was late to leave but early to arrive so I was able to catch an earlier train! Woo! I got back to Bremen and hour earlier and was able to catch up on some random things before my class. It was a good trip and I thoroughly enjoyed experiencing a part of the Middle East. Here's to more trips in the area (assuming the US doesn't keep screwing things up diplomatically!).</p>
+<p>Last flight was late to leave but early to arrive so I was able to catch an earlier train! Woo! I got back to Bremen an hour earlier and was able to catch up on some random things before my class. It was a good trip and I thoroughly enjoyed experiencing a part of the Middle East. Here's to more trips in the area (assuming the US doesn't keep screwing things up diplomatically!).</p>
 
 </div>
