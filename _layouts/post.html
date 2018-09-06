@@ -28,20 +28,20 @@ layout: default
     </div>
   </div>
   <div class="content">
-    <a class="btn btn-default" href="/#{{ page.slug }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to main page</a>
+    <a class="btn btn-default" href="/im-ausland/#{{ page.slug }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back to main page</a>
     {{ content }}
   </div>
 </div>
 <div class="navigate">
   <p>
     {% if page.previous %}
-    <a title="{{ page.previous.title }}" class="btn btn-default" href="{{ page.previous.url }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    <a title="{{ page.previous.title }}" class="btn btn-default" href="/im-ausland{{ page.previous.url }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
     {% else %}
     <a class="btn btn-default disabled" disabled><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
     {% endif %}
-    <a title="Homepage" class="btn btn-default" href="/"><i class="fa fa-th" aria-hidden="true"></i></a>
+    <a title="Homepage" class="btn btn-default" href="/im-ausland"><i class="fa fa-th" aria-hidden="true"></i></a>
     {% if page.next %}
-    <a title="{{ page.next.title }}" class="btn btn-default" href="{{ page.next.url }}"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    <a title="{{ page.next.title }}" class="btn btn-default" href="/im-ausland{{ page.next.url }}"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     {% else %}
     <a class="btn btn-default disabled" disabled><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
     {% endif %}

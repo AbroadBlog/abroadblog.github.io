@@ -37,7 +37,7 @@ layout: default
 					<h1 class="post-heading">{{ post.title }}</h1>
 					<hr class="post-hr">
 					<span>
-						<a class="post-icon" href="/im-ausland/{{ post.url }}"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland{{ post.url }}"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
 						<a class="post-icon" href="{{ post.map-link }}"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
 						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#{{ post.slug }}" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
 						{% if post.comments %}
